@@ -1,0 +1,20 @@
+<launch>
+    
+    <!-- drone_node -->
+    <arg name="default_height" default="1"/>
+    <arg name="timeout_in" default="3.0"/>
+    <arg name="timeout_from_commandstart" default="1.0"/>
+    <arg name="timeout_connection" default="3.0"/>
+    <arg name="activate_tracking" default="-1"/>
+
+
+    <!-- drone_node -->
+    <param name="default_height" value="$(arg default_height)"/>
+    <param name="timeout_in" value="$(arg timeout_in)"/>
+    <param name="timeout_start" value="$(arg timeout_from_commandstart)"/>
+    <param name="timeout_connection" value="$(arg timeout_connection)"/>
+    <param name="activate_tracking" value="$(arg activate_tracking)"/>
+
+
+    <node name = "drone_node" pkg="drone_center" type="drone_node" output="screen"/>
+</launch>
